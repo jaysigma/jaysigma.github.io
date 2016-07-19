@@ -35,14 +35,22 @@ rob@hadoop01:/DATA/log/2016-05-31> python
 Python 2.6 (r26:66714, May  6 2011, 15:10:21)
 [GCC 4.3.4 [gcc-4_3-branch revision 152973]] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
->>> dir()
+dir()
+
 ['__builtins__', '__doc__', '__name__', '__package__']
->>> print __name__
+
+print __name__
+
 __main__
->>> import portToRealm
->>> dir()
+
+ import portToRealm
+
+ dir()
+
 ['__builtins__', '__doc__', '__name__', '__package__', 'portToRealm']
->>> print  portToRealm.__name__
+
+print  portToRealm.__name__
+
 portToRealm
 
 可以知道一个python文件是被视作一个模块的，__name__是python文件的一个内置属性。
@@ -61,23 +69,24 @@ portToRealm
 <p>rob@hadoop01:/DATA/log/2016-05-31&gt; python
 Python 2.6 (r26:66714, May  6 2011, 15:10:21)
 [GCC 4.3.4 [gcc-4_3-branch revision 152973]] on linux2
-Type "help", "copyright", "credits" or "license" for more information.</p>
+Type "help", "copyright", "credits" or "license" for more information.
+dir()</p>
 
-<blockquote>
-  <blockquote>
-    <blockquote>
-      <p>dir()
-      ['<strong>builtins</strong>', '<strong>doc</strong>', '<strong>name</strong>', '<strong>package</strong>']
-      print <strong>name</strong>
-      <strong>main</strong>
-      import portToRealm
-      dir()
-      ['<strong>builtins</strong>', '<strong>doc</strong>', '<strong>name</strong>', '<strong>package</strong>', 'portToRealm']
-      print  portToRealm.<strong>name</strong>
-      portToRealm</p>
-    </blockquote>
-  </blockquote>
-</blockquote>
+<p>['<strong>builtins</strong>', '<strong>doc</strong>', '<strong>name</strong>', '<strong>package</strong>']</p>
+
+<p>print <strong>name</strong></p>
+
+<p><strong>main</strong></p>
+
+<p>import portToRealm</p>
+
+<p>dir()</p>
+
+<p>['<strong>builtins</strong>', '<strong>doc</strong>', '<strong>name</strong>', '<strong>package</strong>', 'portToRealm']</p>
+
+<p>print  portToRealm.<strong>name</strong></p>
+
+<p>portToRealm</p>
 
 <p>可以知道一个python文件是被视作一个模块的，<strong>name</strong>是python文件的一个内置属性。</p>
 
