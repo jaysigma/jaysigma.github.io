@@ -25,72 +25,57 @@
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
-当你打开一个.py文件时,经常会在代码的最下面看到if \_\_name\_\_ == '\_\_main\_\_':,现在就来介 绍一下它的作用.
+当你打开一个.py文件时,经常会在代码的最下面看到`if __name__ == '__main__'`:,现在就来介 绍一下它的作用.
 
-模块是对象，并且所有的模块都有一个内置属性 __name__。一个模块的 __name__ 的值取决于您如何应用模块。如果 import 一个模块，那么模块__name__ 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, __name__ 的值将是一个特别缺省"__main__"。
+模块是对象，并且所有的模块都有一个内置属性`__name__`。一个模块的`__name__`的值取决于您如何应用模块。如果 import 一个模块，那么模块__name__ 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, __name__ 的值将是一个特别缺省"__main__"。
 
 代码演示如下所示：
 
-rob@hadoop01:/DATA/log/2016-05-31> python
-Python 2.6 (r26:66714, May  6 2011, 15:10:21)
-[GCC 4.3.4 [gcc-4_3-branch revision 152973]] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
-dir()
+    rob@hadoop01:/DATA/log/2016-05-31> python
+    Python 2.6 (r26:66714, May  6 2011, 15:10:21)
+    [GCC 4.3.4 [gcc-4_3-branch revision 152973]] on linux2
+    Type "help", "copyright", "credits" or "license" for more information.
+    >dir()
+    ['__builtins__', '__doc__', '__name__', '__package__']
+    >print __name__
+    __main__
+    >import portToRealm
+    >dir()
+    ['__builtins__', '__doc__', '__name__', '__package__', 'portToRealm']
+    >print  portToRealm.__name__
+    portToRealm
 
-['__builtins__', '__doc__', '__name__', '__package__']
+可以知道一个python文件是被视作一个模块的，`__name__`是python文件的一个内置属性。
 
-print __name__
-
-__main__
-
- import portToRealm
-
- dir()
-
-['__builtins__', '__doc__', '__name__', '__package__', 'portToRealm']
-
-print  portToRealm.__name__
-
-portToRealm
-
-可以知道一个python文件是被视作一个模块的，__name__是python文件的一个内置属性。
-
-通过在python文件中使用if __name__ == '__main__':的判断就可以让某个python在直接执行和被当作模块import出现不同的行为。
+通过在python文件中使用`if __name__ == '__main__'`:的判断就可以让某个python在直接执行和被当作模块import出现不同的行为。
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<p>当你打开一个.py文件时,经常会在代码的最下面看到if __name__ == '__main__':,现在就来介 绍一下它的作用.</p>
+<p>当你打开一个.py文件时,经常会在代码的最下面看到<code>if __name__ == '__main__'</code>:,现在就来介 绍一下它的作用.</p>
 
-<p>模块是对象，并且所有的模块都有一个内置属性 <strong>name</strong>。一个模块的 <strong>name</strong> 的值取决于您如何应用模块。如果 import 一个模块，那么模块<strong>name</strong> 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, <strong>name</strong> 的值将是一个特别缺省"<strong>main</strong>"。</p>
+<p>模块是对象，并且所有的模块都有一个内置属性<code>__name__</code>。一个模块的<code>__name__</code>的值取决于您如何应用模块。如果 import 一个模块，那么模块<strong>name</strong> 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, <strong>name</strong> 的值将是一个特别缺省"<strong>main</strong>"。</p>
 
 <p>代码演示如下所示：</p>
 
-<p>rob@hadoop01:/DATA/log/2016-05-31&gt; python
+<pre><code>rob@hadoop01:/DATA/log/2016-05-31&gt; python
 Python 2.6 (r26:66714, May  6 2011, 15:10:21)
 [GCC 4.3.4 [gcc-4_3-branch revision 152973]] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
-dir()</p>
+&gt;dir()
+['__builtins__', '__doc__', '__name__', '__package__']
+&gt;print __name__
+__main__
+&gt;import portToRealm
+&gt;dir()
+['__builtins__', '__doc__', '__name__', '__package__', 'portToRealm']
+&gt;print  portToRealm.__name__
+portToRealm
+</code></pre>
 
-<p>['<strong>builtins</strong>', '<strong>doc</strong>', '<strong>name</strong>', '<strong>package</strong>']</p>
+<p>可以知道一个python文件是被视作一个模块的，<code>__name__</code>是python文件的一个内置属性。</p>
 
-<p>print <strong>name</strong></p>
-
-<p><strong>main</strong></p>
-
-<p>import portToRealm</p>
-
-<p>dir()</p>
-
-<p>['<strong>builtins</strong>', '<strong>doc</strong>', '<strong>name</strong>', '<strong>package</strong>', 'portToRealm']</p>
-
-<p>print  portToRealm.<strong>name</strong></p>
-
-<p>portToRealm</p>
-
-<p>可以知道一个python文件是被视作一个模块的，<strong>name</strong>是python文件的一个内置属性。</p>
-
-<p>通过在python文件中使用if <strong>name</strong> == '<strong>main</strong>':的判断就可以让某个python在直接执行和被当作模块import出现不同的行为。</p>
+<p>通过在python文件中使用<code>if __name__ == '__main__'</code>:的判断就可以让某个python在直接执行和被当作模块import出现不同的行为。</p>
 <!-- content end -->
 </div>
 <br>
